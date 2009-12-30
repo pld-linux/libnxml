@@ -10,6 +10,7 @@ Source0:	http://www.autistici.org/bakunin/libnxml/%{name}-%{version}.tar.gz
 URL:		http://www.autistici.org/bakunin/libnxml/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	curl-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,6 +29,7 @@ Summary:	Header files for nXML library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki nXML
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	curl-devel
 
 %description devel
 Header files for nXML library.
@@ -73,16 +75,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libnxml.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libnxml.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libnxml.so
+%{_libdir}/libnxml.la
+%{_includedir}/nxml.h
+%{_pkgconfigdir}/nxml.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libnxml.a
