@@ -1,13 +1,13 @@
 Summary:	C library for parsing, writing and creating XML files or streams
 Summary(pl.UTF-8):	Biblioteka obsługująca parsowanie, tworzenie i zapisywanie plików i strumieni XML
 Name:		libnxml
-Version:	0.18.3
-Release:	2
+Version:	0.18.5
+Release:	1
 License:	LGPL v2
 Group:		Development/Libraries
-Source0:	http://www.autistici.org/bakunin/libnxml/%{name}-%{version}.tar.gz
-# Source0-md5:	857f43970e7f0724d28f4ddc87085daf
-URL:		http://www.autistici.org/bakunin/libnxml/
+Source0:	https://github.com/bakulf/libnxml/archive/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	443fe423f1987efc3f56c553f3b49d35
+URL:		https://github.com/bakulf/libnxml
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	curl-devel
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libnxml.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libnxml.so.0
 
